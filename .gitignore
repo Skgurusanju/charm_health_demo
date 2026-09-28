@@ -44,6 +44,7 @@ frontend/screenshots/_*.png
 # -------------------------------------------------------------- Editors/OS
 .vscode/
 .idea/
+.vercel/
 *.swp
 *~
 .DS_Store

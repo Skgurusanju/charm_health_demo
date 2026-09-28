@@ -6,9 +6,10 @@ backend_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "backend")
 if backend_dir not in sys.path:
     sys.path.insert(0, backend_dir)
 
+# pyrefly: ignore [missing-import]
 from app import create_app
-from app.database import init_db
-from run import setup_and_seed
+# pyrefly: ignore [missing-import]
+from app.seed import setup_and_seed
 
 if __name__ == "__main__":
     setup_and_seed()

@@ -1,0 +1,10 @@
+{
+  "name": "heal-your-heart-ehr",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Heal Your Heart - Clinical EHR Template Management Engine",
+  "scripts": {
+    "build": "npm --prefix frontend install && npm --prefix frontend run build",
+    "dev": "npm --prefix frontend run dev"
+  }
+}

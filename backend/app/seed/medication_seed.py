@@ -8,7 +8,7 @@ It does NOT automatically prescribe medications, calculate dosages, or replace p
 All entries can be edited, added, or removed by clinical staff.
 """
 
-from app.database import get_db
+from ..database import get_db
 
 COMMON_MEDICATIONS_DATA = [
     # --- FEVER & ACUTE INFECTIONS ---
