@@ -1,0 +1,213 @@
+/* ==========================================================================
+   Horizontal hierarchical options (hopt-*) with natural wrapping
+   ========================================================================== */
+
+.hopt-tree-root {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Horizontal options wrap container: wraps naturally, NO forced horizontal scroll */
+.hopt-options-wrap,
+.hopt-row-scroll,
+.hopt-scroll {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: visible;
+}
+
+/* Container for subtrees under selected parent nodes */
+.hopt-child-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 4px;
+}
+
+/* Visual grouping container for category branches */
+.hopt-categories-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 6px;
+  padding-left: 12px;
+  border-left: 2px solid #cbd5e1;
+}
+
+/* Category group card */
+.hopt-category-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 14px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.hopt-category-group.hopt-leaf-group {
+  border: none;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+
+.hopt-category-header {
+  display: flex;
+  align-items: center;
+}
+
+.hopt-category-chip {
+  font-weight: 600;
+  border-color: #94a3b8;
+  background-color: #f8fafc;
+}
+
+.hopt-category-chip.on {
+  background-color: #e8f2fd;
+  border-color: #9cc6f0;
+  color: #12508f;
+}
+
+.hopt-category-children {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  padding-left: 4px;
+}
+
+/* Subgroup inside category (e.g. Walking on Flat Surface -> More than 1/2 km) */
+.hopt-subgroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 12px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 4px;
+}
+
+.hopt-subgroup-header {
+  display: flex;
+  align-items: center;
+}
+
+.hopt-subgroup-chip {
+  font-weight: 600;
+  border-color: #94a3b8;
+}
+
+.hopt-subgroup-options {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  padding-left: 6px;
+}
+
+/* Option chip button / label container */
+.hopt-opt {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  padding: 4px 10px;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.3;
+  color: #334155;
+  transition: all 0.15s ease;
+}
+
+.hopt-opt:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.hopt-opt .hopt-label {
+  cursor: pointer;
+}
+
+.hopt-opt input.hopt-check {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  accent-color: #1a73e8;
+  cursor: pointer;
+}
+
+/* Selected option: light blue background, blue border, bold text */
+.hopt-opt.on {
+  background-color: #e8f2fd;
+  border-color: #9cc6f0;
+  color: #12508f;
+  font-weight: 600;
+}
+
+.hopt-opt input.hopt-check:disabled {
+  cursor: default;
+}
+
+.hopt-opt input.hopt-check:disabled + .hopt-label {
+  cursor: default;
+}
+
+.hopt-opt input.hopt-check:focus-visible {
+  outline: 2px solid var(--charm-blue, #0288d1);
+  outline-offset: 1px;
+}
+
+/* Context inside ClinicalFormRenderer */
+.cfr-control .hopt-opt {
+  padding: 3px 8px;
+}
+
+.cfr-control .hopt-opt .hopt-label {
+  font-size: 13px;
+}
+
+.cfr-row.full-width-control {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.cfr-row.full-width-control .cfr-label {
+  flex: none;
+  width: 100%;
+  max-width: 100%;
+}
+
+.cfr-row.full-width-control .cfr-control {
+  width: 100%;
+  min-width: 0;
+}

@@ -1,0 +1,51 @@
+# ---------------------------------------------------------------- Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# The SQLite database is generated and seeded on first run by backend/run.py,
+# so it is a build artefact rather than source - and keeping it out avoids
+# committing demo patient rows and consultation records.
+*.db
+*.sqlite
+*.sqlite3
+
+# ------------------------------------------------------------------ Node
+node_modules/
+.npm/
+*.tsbuildinfo
+
+# Vite build output; regenerate with `npm run build`.
+frontend/dist/
+dist/
+build/
+
+# -------------------------------------------------------------- Test runs
+# Playwright captures written by the check scripts. The committed reference
+# captures under frontend/screenshots/ are kept deliberately; these are not.
+playwright-report/
+test-results/
+frontend/screenshots/_*.png
+
+# ------------------------------------------------------------------- Env
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# -------------------------------------------------------------- Editors/OS
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+desktop.ini

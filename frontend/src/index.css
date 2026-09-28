@@ -1,0 +1,28 @@
+/* CharmHealth Clinical Template Management System */
+@import './styles/charm-theme.css';
+@import './styles/pathway.css';
+@import './styles/my-templates.css';
+@import './styles/template-viewer.css';
+@import './styles/option-tree.css';
+@import './styles/builder.css';
+@import './styles/auth.css';
+
+/* Full width clean responsive container */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-page);
+  color: var(--color-text-primary);
+  font-family: var(--font-family);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
